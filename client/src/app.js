@@ -6,6 +6,8 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE } from './config'
   const oInfo = doc.querySelector('#uploadInfo');
   const oBtn = doc.querySelector('#uploadBtn');
 
+  let uploadedSize = 0;
+
   const init = () => {
     bindEvent()
   }
@@ -30,6 +32,10 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE } from './config'
     const fileName = new Date().getTime() + '_' + name;
     oProgress.max = size;
     oInfo.innerText = '';
+
+    while(uploadedSize < size) {
+      const fileChunk = file.slice(uploadedSize, uploadedSize + CHUNK_SIZE);
+    }
   }
 
   init();
