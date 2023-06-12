@@ -11,8 +11,8 @@ app.use(bodyParser.json())
 app.use(uploader())
 
 app.all('*', (req, res, next) => {
-  res.header('Access-Content-Allow-origin', '*')
-  res.header('Access-Content-Allow-Methods', 'POST,GET')
+  res.header('Access-Control-Allow-origin', '*')
+  res.header('Access-Control-Allow-Methods', 'POST,GET')
   next()
 })
 
@@ -25,4 +25,4 @@ app.post('/upload_video', (req, res) => {
 
 app.listen(PORT, () => {
   console.log('Server is running on ' + PORT)
-}) 
+})
