@@ -17,6 +17,7 @@ app.all('*', (req, res, next) => {
 })
 
 app.post('/upload_video', (req, res) => {
+  console.log(req);
   res.send({
     msg: 'ok',
     code: 0
