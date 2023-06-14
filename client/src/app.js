@@ -18,7 +18,6 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE, API  } from './config'
 
   async function uploadVideo() {
     const {files: [file]} = oUploader;
-    console.log(file)
     if (!file) {
       oInfo.innerText = UPLOAD_INFO['NO_FILE'];
     }
@@ -46,7 +45,6 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE, API  } from './config'
       })
       try {
         uploadedResult = await axios.post(API.UPLOAD_VIDEO,  formData);
-        console.log(uploadedResult);
       }catch (e) {
         oInfo.innerText = `${UPLOAD_INFO['UPLOAD_FAILED']}(${e.message})`;
         return;

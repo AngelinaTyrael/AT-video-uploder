@@ -12,7 +12,7 @@ export const ALLOWED_TYPE = {
   'video/ogg': 'ogg'
 };
 
-export const CHUNK_SIZE = 64 * 1024;
+export const CHUNK_SIZE = 640 * 1024;
 
 export const API = {
   UPLOAD_VIDEO: `${BASE_URL}upload_video`
