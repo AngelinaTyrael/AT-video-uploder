@@ -61,9 +61,7 @@ app.post('/upload_video', (req, res) => {
     res.send({
       code: 0,
       msg: 'Appended',
-      data: {
-        video_url: 'http://localhost:8000/' + filename
-      }
+      video_url: 'http://localhost:8000/' + filename
     })
     return;
   }

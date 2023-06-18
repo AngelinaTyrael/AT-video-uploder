@@ -56,6 +56,7 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE, API  } from './config'
 
     oInfo.innerText = UPLOAD_INFO['UPLOAD_SUCCESS'];
     oUploader.value = null;
+    createVideo(uploadedResult.data.video_url)
   }
 
   function createFormData({
@@ -75,6 +76,14 @@ import { UPLOAD_INFO, ALLOWED_TYPE, CHUNK_SIZE, API  } from './config'
     fd.append('file', file);
 
     return fd;
+  }
+
+  function createVideo(src) {
+    const oVideo = document.createElement('video');
+    oVideo.controls = true;
+    oVideo.width = '500';
+    oVideo.src = src;
+    document.body.appendChild(oVideo);
   }
 
   init();
